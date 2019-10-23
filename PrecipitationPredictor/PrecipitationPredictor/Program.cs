@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace PrecipitationPredictor
@@ -17,6 +16,7 @@ namespace PrecipitationPredictor
             date = Console.ReadLine();
             string result = PredictorResults.PrecipAverage(date);
             Console.WriteLine(result);
+
         }
     }
 
@@ -24,7 +24,7 @@ namespace PrecipitationPredictor
     {
         public static string PrecipAverage(string date)
         {
-            using(StreamReader precipResults = new StreamReader(@"precip-records.json"))
+            using(StreamReader precipResults = new StreamReader(@"/Users/davidbarnes/PrecipitationPredictor/PrecipitationPredictor/preciprecords.json"))
             {
                         string contents = precipResults.ReadToEnd();
 
@@ -32,8 +32,12 @@ namespace PrecipitationPredictor
 
                 if (date == "")
                 {
-                    date = DateTime.Now.ToString("M/d");
+                    date = DateTime.Now.ToString("M/dd");
                 }
+
+                //Console.WriteLine(res[0]);
+                //Console.WriteLine(res[0].DATE);
+
 
                 double sum = 0;
 
@@ -47,12 +51,16 @@ namespace PrecipitationPredictor
                 {
                     if (res[i].DATE == date)
                     {
+                        Console.WriteLine(res[i]);
                         string strPRCP = res[i].PRCP;
                         double dblPRCP = Convert.ToDouble(strPRCP);
+
 
                         sum += dblPRCP;
 
                         count++;
+
+                        Console.WriteLine(sum);
 
                         avg = sum / count;
 
