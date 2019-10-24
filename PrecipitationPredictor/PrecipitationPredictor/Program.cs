@@ -11,8 +11,10 @@ namespace PrecipitationPredictor
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Precipitation Predictor!\nResults are based on historical precipitation data from the 27612 ZIP code.");
-            Console.WriteLine("Enter any date in MM/DD format (ex: 12/25) to find out predicted precipitation total for that date.");
+            Console.WriteLine("Welcome to Precipitation Predictor!");
+            Console.WriteLine("\nResults are based on historical precipitation data from the 27612 ZIP code.");
+            Console.WriteLine("\nEnter any date in M/DD format (ex: 12/25 or 7/4) to find out predicted\nprecipitation total for that date.");
+            Console.WriteLine("\n(press 'enter' to use today's date)");
             date = Console.ReadLine();
             string result = PredictorResults.PrecipAverage(date);
             Console.WriteLine(result);
@@ -24,7 +26,7 @@ namespace PrecipitationPredictor
     {
         public static string PrecipAverage(string date)
         {
-            using(StreamReader precipResults = new StreamReader(@"/Users/davidbarnes/PrecipitationPredictor/PrecipitationPredictor/preciprecords.json"))
+            using(StreamReader precipResults = new StreamReader(@"/Users/davidbarnes/PrecipitationPredictor/PrecipitationPredictor/parsed-precip-data.json"))
             {
                         string contents = precipResults.ReadToEnd();
 
@@ -49,9 +51,9 @@ namespace PrecipitationPredictor
 
                 for (int i = 0; i < 4492; i++)
                 {
-                    if (res[i].DATE == date)
+                    if (res[i].parsedDate == date)
                     {
-                        Console.WriteLine(res[i]);
+                        //Console.WriteLine(res[i]);
                         string strPRCP = res[i].PRCP;
                         double dblPRCP = Convert.ToDouble(strPRCP);
 
@@ -60,13 +62,13 @@ namespace PrecipitationPredictor
 
                         count++;
 
-                        Console.WriteLine(sum);
+                        //Console.WriteLine(sum);
 
                         avg = sum / count;
 
                     }
 
-                        if (res[i].DATE != date)
+                        if (res[i].parsedDate != date)
                     {
                         x++;
                     }
@@ -75,7 +77,7 @@ namespace PrecipitationPredictor
                 Console.WriteLine("The predicted precipitation amount on " + date + " is " + avg + ".");
             }
 
-            return "0";
+            return "\nThanks for using the Precipitation Predictor.";
         }
                 
     }

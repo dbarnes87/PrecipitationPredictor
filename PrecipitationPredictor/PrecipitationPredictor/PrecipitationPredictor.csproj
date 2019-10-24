@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EmptyClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Program.cs">
       <IncludeInPackage>true</IncludeInPackage>
     </Compile>
