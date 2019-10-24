@@ -25,7 +25,7 @@ namespace PrecipitationPredictor
             if (date == "")
             {
                 date = DateTime.Now.ToString("M/dd");
-                Console.WriteLine(date + "\n");
+                Console.WriteLine(date);
             }
 
             // Store PredictorResults in variable "prediction"
@@ -63,19 +63,23 @@ namespace PrecipitationPredictor
                 // Declare variable "count" to store number of objects with matching dates
                 int count = 0;
 
-                // Declare variable "averagePrecipitation" to store quotient from equation 
+                // Declare variable "averagePrecipitation" to store quotient for equation 
                 double averagePrecipitation = 0;
 
-                // Iterate through elements of variable "results"
-                for (int i = 0; i < 4492; i++)
+                // Loop through objects of var "results"
+
+                // Declare counter variable
+                int i = 0;
+
+                while (i < results.Count)
                 {
                     // Check if parsedDate for each object in results matches cleaned date from user input
                     if (results[i].parsedDate == cleanDate)
                     {
                         // Write contents of matching objects to console to check accuracy
-                        // Console.WriteLine(results[i]);
+                        //Console.WriteLine(results[i]);
 
-                        // Store string version of precipitation amount in variable "strPRCP"
+                        // Assign string version of precipitation amount to variable "strPRCP"
                         string strPRCP = results[i].PRCP;
 
                         // Convert string precipitation amount to a double data type to allow for calculation
@@ -87,22 +91,26 @@ namespace PrecipitationPredictor
                         // Increase count by one for each object with matching date
                         count++;
 
-                        // Check that runningSum is increasing accurately
-                        // Console.WriteLine(runningSum);
+                        // Check that runningSum and count are increasing accurately
+                        //Console.WriteLine(runningSum);
+                        //Console.WriteLine(count);
 
                         // Obtain average precipitation amount
                         averagePrecipitation = runningSum / count;
 
                     }
 
+                    // Increase counter by one
+                    i++;
+
                 }
 
                 // Write average precipitation amount for given date to the console
-                Console.WriteLine("The predicted precipitation amount on " + date + " is " + averagePrecipitation + ".");
+                Console.WriteLine("\nThe predicted precipitation amount on " + date + " is " + averagePrecipitation + ".");
             }
 
             // Provide return for function
-            return "\nThanks for using the Precipitation Predictor.";
+            return "\nThank you for using the Precipitation Predictor.";
         }
                 
     }
