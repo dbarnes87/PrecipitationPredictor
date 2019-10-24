@@ -95,7 +95,7 @@ namespace PrecipitationPredictor
                         //Console.WriteLine(runningSum);
                         //Console.WriteLine(count);
 
-                        // Obtain average precipitation amount
+                        // Calculate average precipitation amount
                         averagePrecipitation = runningSum / count;
 
                     }
