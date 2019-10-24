@@ -14,13 +14,13 @@ namespace PredictorTests
             string date = "";
 
             /* Expected Output */
-            string expectedOutput = "\nThe predicted precipitation amount on 10/24 is 0.5909090909090909.";
+            string testOutput = "\nThe predicted precipitation amount on 10/24 is 0.5909090909090909.";
 
             /* Predicted Output */
             string predictedOutput = $"{PredictorResults.PrecipAverage(date)}";
 
             /* Check to see if equal */
-            Assert.AreEqual(expectedOutput, predictedOutput);
+            Assert.AreEqual(testOutput, predictedOutput);
         }
 
         [TestMethod]
@@ -30,13 +30,13 @@ namespace PredictorTests
             string date = "1/15";
 
             /* Expected Output */
-            string expectedOutput = $"\nThe predicted precipitation amount on 1/15 is 0.015000000000000001.";
+            string testOutput = $"\nThe predicted precipitation amount on 1/15 is 0.015000000000000001.";
 
             /* Predicted Output */
             string predictedOutput = $"{PredictorResults.PrecipAverage(date)}";
 
             /* Check to see if equal */
-            Assert.AreEqual(expectedOutput, predictedOutput);
+            Assert.AreEqual(testOutput, predictedOutput);
         }
     }
 }
