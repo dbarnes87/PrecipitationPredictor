@@ -13,7 +13,7 @@ namespace PrecipitationPredictor
         {
             Console.WriteLine("Welcome to Precipitation Predictor!");
             Console.WriteLine("\nResults are based on historical precipitation data from the 27612 ZIP code.");
-            Console.WriteLine("\nEnter any date in M/DD format (ex: 12/25 or 7/4) to find out predicted\nprecipitation total for that date.");
+            Console.WriteLine("\nEnter any date in M/dd format (ex: 12/25 or 7/4) to find out predicted\nprecipitation total for that date.");
             Console.WriteLine("\n(press 'enter' to use today's date)\n");
             date = Console.ReadLine();
             Console.WriteLine("");
@@ -41,6 +41,9 @@ namespace PrecipitationPredictor
                 //Console.WriteLine(res[0]);
                 //Console.WriteLine(res[0].DATE);
 
+                string cleanedDate = date.TrimStart('0');
+
+                //Console.WriteLine(cleanedDate);
 
                 double sum = 0;
 
@@ -52,7 +55,7 @@ namespace PrecipitationPredictor
 
                 for (int i = 0; i < 4492; i++)
                 {
-                    if (res[i].parsedDate == date)
+                    if (res[i].parsedDate == cleanedDate)
                     {
                         //Console.WriteLine(res[i]);
                         string strPRCP = res[i].PRCP;
@@ -69,7 +72,7 @@ namespace PrecipitationPredictor
 
                     }
 
-                        if (res[i].parsedDate != date)
+                        if (res[i].parsedDate != cleanedDate)
                     {
                         x++;
                     }
