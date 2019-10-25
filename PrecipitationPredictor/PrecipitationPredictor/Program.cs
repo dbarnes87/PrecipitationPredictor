@@ -25,6 +25,8 @@ namespace PrecipitationPredictor
             if (date == "")
             {
                 date = DateTime.Now.ToString("M/dd");
+
+                // Write current date to console for appearance continuity, since no date was typed onto it.
                 Console.WriteLine(date);
             }
 
@@ -38,6 +40,9 @@ namespace PrecipitationPredictor
 
     public static class PredictorResults
     {
+        // Declare variable "averagePrecipitation" to store quotient for equation 
+        public static double averagePrecipitation = 0;
+
         public static string PrecipAverage(string date)
         {
             // Read-in JSON file and store result in variable "contents"
@@ -56,9 +61,6 @@ namespace PrecipitationPredictor
 
                 // Declare variable "count" to store number of objects with matching dates
                 int count = 0;
-
-                // Declare variable "averagePrecipitation" to store quotient for equation 
-                double averagePrecipitation = 0;
 
                 // Loop through objects of var "results"
 
@@ -100,12 +102,11 @@ namespace PrecipitationPredictor
 
                 }
 
-                // Write average precipitation amount for given date to the console
-                Console.WriteLine("\nThe predicted precipitation amount on " + date + " is " + averagePrecipitation + " units.");
             }
 
-            // Provide return for function
-            return "\nThank you for using the Precipitation Predictor.";
+            // Write average precipitation amount for given date to the console
+            return "\nThe predicted precipitation amount on " + date + " is " + averagePrecipitation + " units.";
+
         }
                 
     }

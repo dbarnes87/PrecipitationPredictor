@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrecipitationPredictor", "PrecipitationPredictor.csproj", "{62637203-D56E-4220-9857-58978108E41D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredictorTest", "PredictorTest\PredictorTest.csproj", "{7C210E44-D1A1-4658-87EA-E1999FFD925E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredictorTest", "..\..\PredictorTest\PredictorTest.csproj", "{D008C8FA-571D-4815-9AD8-5DFB1EE1D75F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,9 @@ Global
 		{62637203-D56E-4220-9857-58978108E41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62637203-D56E-4220-9857-58978108E41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62637203-D56E-4220-9857-58978108E41D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C210E44-D1A1-4658-87EA-E1999FFD925E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C210E44-D1A1-4658-87EA-E1999FFD925E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C210E44-D1A1-4658-87EA-E1999FFD925E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C210E44-D1A1-4658-87EA-E1999FFD925E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D008C8FA-571D-4815-9AD8-5DFB1EE1D75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D008C8FA-571D-4815-9AD8-5DFB1EE1D75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D008C8FA-571D-4815-9AD8-5DFB1EE1D75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D008C8FA-571D-4815-9AD8-5DFB1EE1D75F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
