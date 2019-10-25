@@ -42,18 +42,11 @@ namespace PrecipitationPredictor
         {
             // Read-in JSON file and store result in variable "contents"
             using (StreamReader precipResults = new StreamReader(@"parsed-precip-data.json"))
-            //using(StreamReader precipResults = new StreamReader(@"/Users/davidbarnes/PrecipitationPredictor/PrecipitationPredictor/parsed-precip-data.json"))
             {
                 string contents = precipResults.ReadToEnd();
 
                 // Deserialize "contents" and store results in variable "results"
                 var results = JsonConvert.DeserializeObject<dynamic>(contents);
-
-                // If user pressed enter for current date, convert DateTime to M/dd string format
-                if (date == "")
-                {
-                    date = DateTime.Now.ToString("M/dd");
-                }
 
                 // If user input leading zero for single-digit month, remove it
                 string cleanDate = date.TrimStart('0');
