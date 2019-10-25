@@ -14,7 +14,7 @@
 //        {
 //            string date = "";
 
-//            string testOutput = "\nThe predicted precipitation amount on 10/25 is 0.0.2725.";
+//            string testOutput = "\nThe predicted precipitation amount on 10/25 is 0.2725.";
 
 //            string predictedOutput = $"{PredictorResults.PrecipAverage(date)}";
 

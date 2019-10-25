@@ -67,6 +67,7 @@ namespace PrecipitationPredictor
 
                 while (i < results.Count)
                 {
+
                     // Check if parsedDate for each object in results matches cleaned date from user input
                     if (results[i].parsedDate == cleanDate)
                     {
