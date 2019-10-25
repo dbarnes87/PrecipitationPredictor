@@ -41,9 +41,10 @@ namespace PrecipitationPredictor
         public static string PrecipAverage(string date)
         {
             // Read-in JSON file and store result in variable "contents"
-            using(StreamReader precipResults = new StreamReader(@"/Users/davidbarnes/PrecipitationPredictor/PrecipitationPredictor/parsed-precip-data.json"))
+            using (StreamReader precipResults = new StreamReader(@"parsed-precip-data.json"))
+            //using(StreamReader precipResults = new StreamReader(@"/Users/davidbarnes/PrecipitationPredictor/PrecipitationPredictor/parsed-precip-data.json"))
             {
-                        string contents = precipResults.ReadToEnd();
+                string contents = precipResults.ReadToEnd();
 
                 // Deserialize "contents" and store results in variable "results"
                 var results = JsonConvert.DeserializeObject<dynamic>(contents);
@@ -106,7 +107,7 @@ namespace PrecipitationPredictor
                 }
 
                 // Write average precipitation amount for given date to the console
-                Console.WriteLine("\nThe predicted precipitation amount on " + date + " is " + averagePrecipitation + ".");
+                Console.WriteLine("\nThe predicted precipitation amount on " + date + " is " + averagePrecipitation + " units.");
             }
 
             // Provide return for function
